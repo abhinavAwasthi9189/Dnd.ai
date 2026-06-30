@@ -8,7 +8,7 @@ enum Klass{
     Rogue,
 }
 
-#[derive(Debug,Clone)]
+#[derive(Debug,Clone,Copy)]
 enum Species{
     Human,
     Elf,
@@ -16,26 +16,26 @@ enum Species{
 }
 
 #[derive(Debug,Copy,Clone)]
-struct Stats{
-    strength: i16,
-    dexterity: i16,
-    constitution: i16,
-    intelligence: i16,
-    wisdom: i16,
-    charisma: i16,
+pub struct Stats{
+    pub strength: i16,
+    pub dexterity: i16,
+    pub constitution: i16,
+    pub intelligence: i16,
+    pub wisdom: i16,
+    pub charisma: i16,
 }
 
 #[derive(Debug,Clone)]
 pub struct Character{
-    name: String,
+    pub name: String,
     klass:Klass,
     species:Species,
     level: u16,
     pub stats: Stats,
-    modifier: Stats,
+    pub modifier: Stats,
     mhp: u16, //maximum health points
-    hp:u16,   // heath points
-    ac:u16,   // Armor Class
+    pub hp:u16,   // heath points
+    pub ac:i16,   // Armor Class
 }
 
 impl Stats{
