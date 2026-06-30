@@ -33,7 +33,7 @@ impl Mob{
 fn combat_encounter(playvec: &mut Vec<Character>, monvec: &mut Vec<Monster>){
     //number of raidplayer has taken part in.
     static mut RAIDNUM:u16 = 0;
-    unsafe{RAIDNUM +=1;}
+    
     let mut mob: Vec<Mob> = monvec.iter().cloned().map(Mob::Mon).collect();
     mob.extend(playvec.iter().cloned().map(Mob::Player));
     mob.sort_by_key(|item| item.get_dex());
@@ -48,19 +48,20 @@ fn combat_encounter(playvec: &mut Vec<Character>, monvec: &mut Vec<Monster>){
     
             //check if a player or a monster is left to attack or  should we just stop.
             match Mob.feasable(&mob){
-                0 => {break 'master;}
-                1 => {break 'master;}
+                0 => {
+                    break 'master;}
+                1 => {
+                    unsafe{RAIDNUM +=1;}
+                    //if the player level increases by certain amount we level up
+                    if playvec[0].get_clevel()*10 < unsafe{RAIDNUM}{}
+                    for playup in playvec{
+                        playup.leveup();
+                    }
+                    break 'master;}
                 _ => {}
             }
         }
-    }
-    
-    //if the player level increases by certain amount we level up
-    if playvec[0].get_clevel()*10 < unsafe{RAIDNUM}{
-        for playup in playvec{
-            playup.leveup();
-        }
-    }
+    }   
 }
 
 
