@@ -1,1 +1,23 @@
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   0.060580201s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint: dependency on `cpufeatures` is newer than we are 1782754849.025298274s > 1782754849.024869358s "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/chacha20-0.10.1"
+   0.060665370s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint: dependency on `build_script_build` is newer than we are 1782754852.105667671s > 1782754849.052500886s "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.186"
+   0.060719874s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint: fingerprint dirty for Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd)/Check { test: false }/TargetInner { name: "Dnd", doc: true, ..: with_path("/home/jarvis/Documents/gitdemo/Dnd/src/main.rs", Edition2024) }
+   0.060729374s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(11) })
+   0.060963499s  INFO prepare_target{force=false package_id=rand v0.10.1 target="rand"}: cargo::core::compiler::fingerprint: fingerprint dirty for rand v0.10.1/Check { test: false }/TargetInner { ..: lib_target("rand", ["lib"], "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rand-0.10.1/src/lib.rs", Edition2024) }
+   0.060971997s  INFO prepare_target{force=false package_id=rand v0.10.1 target="rand"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(3) })
+   0.061118159s  INFO prepare_target{force=false package_id=chacha20 v0.10.1 target="chacha20"}: cargo::core::compiler::fingerprint: fingerprint dirty for chacha20 v0.10.1/Check { test: false }/TargetInner { ..: lib_target("chacha20", ["lib"], "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/chacha20-0.10.1/src/lib.rs", Edition2024) }
+   0.061124146s  INFO prepare_target{force=false package_id=chacha20 v0.10.1 target="chacha20"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { unit: UnitIndex(4), dep_mtime: FileTime { seconds: 1782754849, nanos: 25298274 }, max_mtime: FileTime { seconds: 1782754849, nanos: 24869358 } })
+   0.061358967s  INFO prepare_target{force=false package_id=getrandom v0.4.3 target="getrandom"}: cargo::core::compiler::fingerprint: fingerprint dirty for getrandom v0.4.3/Check { test: false }/TargetInner { ..: lib_target("getrandom", ["lib"], "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.4.3/src/lib.rs", Edition2024) }
+   0.061368412s  INFO prepare_target{force=false package_id=getrandom v0.4.3 target="getrandom"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(8) })
+   0.061668855s  INFO prepare_target{force=false package_id=libc v0.2.186 target="libc"}: cargo::core::compiler::fingerprint: fingerprint dirty for libc v0.2.186/Check { test: false }/TargetInner { ..: lib_target("libc", ["lib"], "/home/jarvis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.186/src/lib.rs", Edition2021) }
+   0.061678884s  INFO prepare_target{force=false package_id=libc v0.2.186 target="libc"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDependency { unit: UnitIndex(10), dep_mtime: FileTime { seconds: 1782754852, nanos: 105667671 }, max_mtime: FileTime { seconds: 1782754849, nanos: 52500886 } })
+   0.061970240s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint: fingerprint dirty for Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd)/Check { test: true }/TargetInner { name: "Dnd", doc: true, ..: with_path("/home/jarvis/Documents/gitdemo/Dnd/src/main.rs", Edition2024) }
+   0.061979515s  INFO prepare_target{force=false package_id=Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd) target="Dnd"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(11) })
+    Checking libc v0.2.186
+    Checking chacha20 v0.10.1
+    Checking getrandom v0.4.3
+    Checking rand v0.10.1
+    Checking Dnd v0.1.0 (/home/jarvis/Documents/gitdemo/Dnd)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.83s

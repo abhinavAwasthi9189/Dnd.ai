@@ -1,14 +1,14 @@
 use crate::modules::dice::Dice;
 use std::io;
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 enum Klass{
     Figher,
     Wizard,
     Rogue,
 }
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 enum Species{
     Human,
     Elf,
@@ -25,17 +25,17 @@ struct Stats{
     charisma: i16,
 }
 
-
-struct Character{
+#[derive(Debug,Clone)]
+pub struct Character{
     name: String,
     klass:Klass,
     species:Species,
     level: u16,
-    stats: Stats,
+    pub stats: Stats,
     modifier: Stats,
-    mhp: i16, //maximum health points
-    hp:i16,   // heath points
-    ac:i16,   // Armor Class
+    mhp: u16, //maximum health points
+    hp:u16,   // heath points
+    ac:u16,   // Armor Class
 }
 
 impl Stats{
@@ -84,13 +84,13 @@ impl Character{
         }
 
         println!("now for the Class. Fighter[1], Rogue[2], Wizard[3]");
-        let a = intput(); let mhp:i16; let ac:i16;
+        let a = intput(); let mhp:u16; let ac:u16;
         let mut klass:Klass = Klass::Figher;
         match a{
-            1 =>{mhp = modi.constitution + 10; ac = 16;}
-            2 =>{klass = Klass::Rogue;mhp = modi.constitution + 8;ac = 11 + modi.dexterity;}
-            3 =>{klass = Klass::Wizard;mhp = modi.constitution + 6;ac = 10 + modi.dexterity;}
-            _ =>{mhp = -1;ac = -1;}
+            1 =>{mhp = (modi.constitution) as u16 +10; ac = 16;}
+            2 =>{klass = Klass::Rogue;mhp = modi.constitution as u16 +8;ac = 11 + modi.dexterity as u16;}
+            3 =>{klass = Klass::Wizard;mhp = modi.constitution as u16 + 6;ac = 10 + modi.dexterity as u16;}
+            _ =>{mhp = 0;ac = 0;}
         }
         
         
@@ -124,7 +124,7 @@ impl Character{
 
     pub fn leveup(&mut self){
         self.level+=1;
-        self.mhp+=6+self.stats.constitution;
+        self.mhp+=6+(self.stats.constitution) as u16;
     }
 
     pub fn attack_dice(&self)-> Dice{
@@ -142,6 +142,13 @@ impl Character{
         }
     }
 
+    pub fn get_cdex(&self) -> i16{
+        self.modifier.dexterity
+    }
+
+    pub fn get_clevel(&self) -> u16{
+        self.level
+    }
 }
 
 

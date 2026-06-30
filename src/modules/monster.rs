@@ -2,19 +2,28 @@ use crate::modules::dice::Dice;
 use std::io;
 
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 enum montype{
     Boss,
     Skirmisher,
     Beast,
 }
 
-struct Monster{
+#[derive(Debug,Clone)]
+pub struct Monster{
     name: String,
     iqbase:montype,
-    attackmod:u16,
-    dexteritymod:u16,
-    mhp: i16, //maximum health points
-    hp:i16,   // heath points
+    attackmod:i16,
+    dexteritymod:i16,
+    mhp: u16, //maximum health points
+    hp:u16,   // heath points
     ac:i16,   // Armor Class
 }
+
+impl Monster{
+    pub fn get_mdex(&self) -> i16{
+        self.dexteritymod
+    }
+}
+
+
