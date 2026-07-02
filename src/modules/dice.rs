@@ -1,8 +1,9 @@
 // dice module
-use rand::rng;
 use rand::RngExt;
+use rand::rng;
+use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 #[repr(u16)]
 pub enum Dice {
     D4 = 4,
@@ -21,6 +22,7 @@ impl Dice {
         my_rng.random_range(1..=val)
     }
 
+    //this functions rolls d6 4 times and adds the 3 higher values. its something in dnd, idk.
     pub fn charstat() -> u16 {
         let mut satcode: [u16; 4] = [0; 4];
         satcode[0] = Dice::D6.roll_die();

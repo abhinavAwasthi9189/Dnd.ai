@@ -1,1 +1,1 @@
-/home/jarvis/Documents/gitdemo/Dnd/target/debug/Dnd: /home/jarvis/Documents/gitdemo/Dnd/src/main.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules/dice.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules.rs
+/home/jarvis/Documents/gitdemo/Dnd/target/debug/Dnd: /home/jarvis/Documents/gitdemo/Dnd/src/main.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules/Net.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules/character.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules/dice.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules/monster.rs /home/jarvis/Documents/gitdemo/Dnd/src/modules.rs
